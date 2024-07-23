@@ -1,6 +1,8 @@
+import { url } from "inspector";
+
 export const navItems = [
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
+  { name: "Projects", link: "#work" },
   
   { name: "Contact", link: "#contact" },
 ];
@@ -85,13 +87,16 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    url: "https://github.com/Neeljain65/",
   },
   {
     id: 2,
     img: "/twit.svg",
+    url: "https://x.com/neeliya_"
   },
   {
     id: 3,
     img: "/link.svg",
+    url:"https://www.linkedin.com/in/neel-jain-202029260/"
   },
 ];

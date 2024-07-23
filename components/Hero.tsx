@@ -1,12 +1,13 @@
+"use client"
 import { FaLocationArrow } from "react-icons/fa6";
-
+import motion from 'framer-motion'
 import MagicButton from "./MagicButton";
-
+import Tile from "./ui/tile";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="w-full relative">
       {/**
        *  UI: Spotlights
        *  Link: https://ui.aceternity.com/components/spotlight
@@ -18,20 +19,15 @@ const Hero = () => {
        *  change bg color to bg-black-100 and reduce grid color from
        *  0.2 to 0.03
        */}
-      <div
-        className="h-screen w-full dark:bg-black-100 bg-white 
-       absolute top-0 left-0 flex items-center justify-center"
-      >
-        {/* Radial gradient for the container to give a faded look */}
-        <div
-          // chnage the bg to bg-black-100, so it matches the bg color and will blend in
-          className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
-         bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
-        />
-      </div>
+        <section className="w-full grid grid-cols-20 gap-0 h-screen overflow-y-clip">
+        {Array.from(Array(20 * 12), (i) => (
+          <Tile key={i} />
+        ))}
+      </section>
+     
 
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+      <div className="pointer-events-none absolute inset-0 flex justify-center  my-20 z-10">
+        <div className="z-10 max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
 
           </p>
@@ -50,15 +46,17 @@ const Hero = () => {
             Hi! I&apos;m Neel, a Full stack Developer based in India.
           </p>
 
-          <a href="#work">
+          <a href="NeelResume_July.pdf" download={"Neel_Resume"} className="pointer-events-auto"> 
             <MagicButton
-              title="Show my work"
+              title="Download Resume"
               icon={<FaLocationArrow />}
               position="right"
             />
           </a>
         </div>
       </div>
+
+      
     </div>
   );
 };
